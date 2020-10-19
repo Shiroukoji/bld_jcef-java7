@@ -19,9 +19,11 @@ jobs:
         architecture: x86
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/java-cfe/src
-      run: mkdir ./jcef_build
+      shell: powershell
+      run: mkdir jcef_build
     - name: Create Build Files
       working-directory: ${{runner.workspace}}/java-cfe/src/jcef_build
+      shell: powershell
       run: cmake -G "Visual Studio 14"
     - name: Build
       working-directory: ${{runner.workspace}}/java-cfe/tools
