@@ -17,10 +17,6 @@ jobs:
         java-version: '7'
         java-package: jdk
         architecture: x86
-    - name: Create Build Environment
-      working-directory: ${{runner.workspace}}/java-cfe/src
-      shell: bash
-      run: mkdir jcef_build
     - name: Create Build Files
       working-directory: ${{runner.workspace}}/java-cfe/src/jcef_build
       shell: powershell
