@@ -18,7 +18,7 @@ jobs:
         java-package: jdk
         architecture: x86
     - name: bla
-      working-directory: ${{runner.workspace}}/bld_jcef-java7
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
       run: ls
     - name: Create Build Environment
