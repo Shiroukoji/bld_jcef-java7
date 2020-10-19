@@ -18,8 +18,6 @@ jobs:
         java-version: '7'
         java-package: jdk
         architecture: x86
-    - name: Create Build Environment
-      run: cmake -E make_directory ${{runner.workspace}}/java-cfe/build
     - name: Configure CMake
       shell: powershell
       working-directory: ${{runner.workspace}}/java-cfe
