@@ -20,7 +20,7 @@ jobs:
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/java-cef/src
       shell: powershell
-      run: mkdir jcef_build
+      run: mkdir "jcef_build"
     - name: Create Build Files
       working-directory: ${{runner.workspace}}/java-cef/src/jcef_build
       shell: powershell
