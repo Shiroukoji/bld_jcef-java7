@@ -10,6 +10,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+      with: 
+        submodules: recursive 
     - uses: actions/setup-java@v1
       with:
         java-version: '7'
@@ -19,9 +21,9 @@ jobs:
       run: cmake -E make_directory ${{runner.workspace}}/java-cfe/build
     - name: Configure CMake
       shell: powershell
-      working-directory: ${{runner.workspace}}/java-cfe
+      working-directory: ${{runner.workspace}}/java-cfe/build
       run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
     - name: Build
-      working-directory: ${{runner.workspace}}/java-cfe
+      working-directory: ${{runner.workspace}}/java-cfe/build
       shell: powershell
       run: cmake --build . --config $BUILD_TYPE
