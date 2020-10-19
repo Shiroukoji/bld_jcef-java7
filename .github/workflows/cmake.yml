@@ -10,6 +10,11 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '7.0.181'
+        java-package: jdk
+        architecture: x86
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/java-cfe/build
     - name: Configure CMake
@@ -17,6 +22,6 @@ jobs:
       working-directory: ${{runner.workspace}}/java-cfe/build
       run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
     - name: Build
-      working-directory: ${{runner.workspace}}/build
+      working-directory: ${{runner.workspace}}/java-cfe/build
       shell: powershell
       run: cmake --build . --config $BUILD_TYPE
