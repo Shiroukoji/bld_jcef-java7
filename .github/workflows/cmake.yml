@@ -4,6 +4,7 @@ on: [push]
 
 env:
   BUILD_TYPE: Release
+  CMAKE_SOURCE_DIR: $GITHUB_WORKSPACE/java-cfe
 
 jobs:
   build:
