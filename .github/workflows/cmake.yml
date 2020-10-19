@@ -19,12 +19,12 @@ jobs:
         java-package: jdk
         architecture: x86
     - name: Create Build Environment
-      run: cmake -E make_directory ${{runner.workspace}}/java-cfe
-    - name: Configure CMake
-      shell: powershell
-      working-directory: ${{runner.workspace}}/java-cfe
-      run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+      working-directory: ${{runner.workspace}}/java-cfe/src
+      run: mkdir jcef_build
+    - name: Create Build Files
+      working-directory: ${{runner.workspace}}/java-cfe/src/jcef_build
+      run: cmake -G "Visual Studio 14"
     - name: Build
-      working-directory: ${{runner.workspace}}/java-cfe
+      working-directory: ${{runner.workspace}}/java-cfe/tools
       shell: powershell
-      run: cmake --build . --config $BUILD_TYPE
+      run: compile.bat "win32"
