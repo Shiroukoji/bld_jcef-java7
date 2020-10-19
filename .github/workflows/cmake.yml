@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v1
       with:
-        java-version: '7.0.181'
+        java-version: '7'
         java-package: jdk
         architecture: x86
     - name: Create Build Environment
