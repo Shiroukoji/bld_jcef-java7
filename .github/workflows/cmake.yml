@@ -10,7 +10,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/checkout@v2
       with:
         repository: chromiumembedded/java-cef
     - uses: actions/setup-java@v1
@@ -20,14 +19,14 @@ jobs:
         architecture: x86
     - uses: microsoft/setup-msbuild@v1.0.2
     - name: Create Build Environment
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
+      working-directory: ${{runner.workspace}}/java-cef
       shell: powershell
       run: mkdir "jcef_build"
     - name: Create Build Files
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/jcef_build
+      working-directory: ${{runner.workspace}}/java-cef/jcef_build
       shell: powershell
       run: cmake -A "Win32" ../
     - name: Build
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/tools
+      working-directory: ${{runner.workspace}}/java-cef/tools
       shell: powershell
       run: compile.bat "win32"
