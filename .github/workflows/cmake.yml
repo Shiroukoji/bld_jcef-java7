@@ -17,6 +17,7 @@ jobs:
         java-version: '7'
         java-package: jdk
         architecture: x86
+    - uses: microsoft/setup-msbuild@v1.0.2
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
