@@ -21,6 +21,10 @@ jobs:
         java-package: jdk
         architecture: x86
     - uses: microsoft/setup-msbuild@v1.0.2
+    - name: Apply Patch
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
+      shell: powershell
+      run: git apply ../bld_jcef-java7/build.patch
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
