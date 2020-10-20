@@ -23,7 +23,7 @@ jobs:
       shell: powershell
       run: mkdir "jcef_build"
     - name: Create Build Files
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/jcef_build
       shell: powershell
       run: cmake -G "Visual Studio 14"
     - name: Build
