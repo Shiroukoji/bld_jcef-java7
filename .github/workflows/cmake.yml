@@ -18,6 +18,10 @@ jobs:
         java-package: jdk
         architecture: x86
     - uses: microsoft/setup-msbuild@v1.0.2
+    - name: blah
+      working-directory: ${{runner.workspace}}
+      shell: powershell
+      run: ls
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/java-cef
       shell: powershell
