@@ -20,7 +20,7 @@ jobs:
         architecture: x86
     - uses: microsoft/setup-msbuild@v1.0.2
     - name: blah
-      working-directory: ${{runner.workspace}}
+      working-directory: ${{runner.workspace}}/bld_jcef-java7
       shell: powershell
       run: ls
     - name: Create Build Environment
