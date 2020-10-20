@@ -10,9 +10,11 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       with:
         repository: chromiumembedded/java-cef
         path: java-cef
+        clean: false
     - uses: actions/setup-java@v1
       with:
         java-version: '7'
