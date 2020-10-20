@@ -31,3 +31,11 @@ jobs:
       working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
       run: msbuild.exe './jcef_build/jcef.sln' -property:Platform="Win32"
+    - name: Compile
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/tools
+      shell: powershell
+      run: ./compile.bat "win32"
+    - name: Dist
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/tools
+      shell: powershell
+      run: ./make_distrib.bat "win32"
