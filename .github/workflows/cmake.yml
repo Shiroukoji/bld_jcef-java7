@@ -19,10 +19,6 @@ jobs:
         java-package: jdk
         architecture: x86
     - uses: microsoft/setup-msbuild@v1.0.2
-    - name: blah
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
-      shell: powershell
-      run: ls
     - name: Create Build Environment
       working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
@@ -32,6 +28,6 @@ jobs:
       shell: powershell
       run: cmake -A "Win32" ../
     - name: Build
-      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef/tools
+      working-directory: ${{runner.workspace}}/bld_jcef-java7/java-cef
       shell: powershell
-      run: compile.bat "win32"
+      run: msbuild.exe './jcef_build/jcef.sln' -property:Platform="Win32"
