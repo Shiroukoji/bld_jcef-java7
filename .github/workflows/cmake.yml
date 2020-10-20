@@ -10,8 +10,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-      with: 
-        submodules: recursive 
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/chromiumembedded/java-cef.git
     - uses: actions/setup-java@v1
       with:
         java-version: '7'
